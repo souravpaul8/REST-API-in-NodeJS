@@ -18,9 +18,9 @@ router.post('/', (req, res, next) => {
     });
 });
 
-router.get('/:productId', (req,res,next) => {
+router.get('/:productId', (req, res, next) => {
     const id = req.params.productId;
-    if(id === 'special') {
+    if (id === 'special') {
         res.status(200).json({
             message: 'You discovered the special ID',
             id: id
@@ -32,13 +32,13 @@ router.get('/:productId', (req,res,next) => {
     }
 });
 
-router.patch('/:productId', (req,res,next) => {
+router.patch('/:productId', (req, res, next) => {
     res.status(200).json({
         message: 'Updated Product !'
     });
 });
 
-router.delete('/:productId', (req,res,next) => {
+router.delete('/:productId', (req, res, next) => {
     res.status(200).json({
         message: 'Deleted Product!'
     });
