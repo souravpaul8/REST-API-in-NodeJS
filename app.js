@@ -13,6 +13,7 @@ mongoose.connect(`mongodb+srv://node-rest:${
   process.env.MONGO_ATLAS_PW
 }@node-rest-api-44x3c.mongodb.net/<dbname>?retryWrites=true&w=majority`,
 { useNewUrlParser: true });
+mongoose.Promise = global.Promise;
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({
@@ -20,6 +21,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+// eslint-disable-next-line consistent-return
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header(
